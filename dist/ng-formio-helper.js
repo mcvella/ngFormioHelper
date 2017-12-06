@@ -617,10 +617,12 @@ angular.module('ngFormioHelper')
                 if (user) {
                   $rootScope.user = user;
                   localStorage.setItem('formioAppUser', angular.toJson(user));
+                  localStorage.setItem('formioUser', angular.toJson(user));
                 }
                 else {
                   $rootScope.user = null;
                   localStorage.removeItem('formioAppUser');
+                  localStorage.removeItem('formioUser');
                   Formio.clearCache();
                   Formio.setUser(null);
                 }
